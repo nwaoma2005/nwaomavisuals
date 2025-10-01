@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nwaoma Visuals - Professional Video Editing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: fadeInDown 1s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        h1 {
+            font-size: 3em;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        .tagline {
+            font-size: 1.3em;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 3px solid #764ba2;
+            padding-bottom: 10px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .service-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .service-card h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .rules-list {
+            background: #f8f9ff;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            margin-top: 20px;
+        }
+
+        .rules-list h3 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .rules-list ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .rules-list li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.05em;
+        }
+
+        .rules-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+
+        .youtube-btn {
+            display: inline-block;
+            background: #FF0000;
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 30px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+        }
+
+        .youtube-btn:hover {
+            background: #cc0000;
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.5);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 30px auto;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.2);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            padding: 18px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            color: white;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .contact-info p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            margin-top: 40px;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 NWAOMA VISUALS</h1>
+            <p class="tagline">Professional Video Editing & Animation Services</p>
+        </header>
+
+        <div class="section">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Motion Graphics</h3>
+                    <p>Eye-catching animated graphics for your brand</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📺</div>
+                    <h3>Advert Videos</h3>
+                    <p>Professional promotional videos that convert</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✏️</div>
+                    <h3>Whiteboard Animation</h3>
+                    <p>Engaging explainer videos that educate</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👶</div>
+                    <h3>Kids Nursery Rhymes</h3>
+                    <p>Colorful and fun animations for children</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✂️</div>
+                    <h3>Clip Merge & Editing</h3>
+                    <p>Seamless video editing and merging</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://www.youtube.com/@nwaomavisuals" target="_blank" class="youtube-btn">
+                    📺 Watch Our Portfolio on YouTube
+                </a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>How We Work</h2>
+            
+            <div class="rules-list">
+                <h3>📋 Before Editing</h3>
+                <ul>
+                    <li>Share your video requirements and vision with us</li>
+                    <li>We'll provide a quote and timeline for your project</li>
+                    <li>Send us all necessary materials and files</li>
+                </ul>
+            </div>
+
+            <div class="rules-list">
+                <h3>⚙️ During Editing</h3>
+                <ul>
+                    <li>We'll send preview videos to your WhatsApp in one-time view format</li>
+                    <li>You can request revisions and adjustments</li>
+                    <li>We keep you updated throughout the editing process</li>
+                </ul>
+            </div>
+
+            <div class="rules-list">
+                <h3>✅ After Editing</h3>
+                <ul>
+                    <li>Final payment is required before delivery</li>
+                    <li>You'll receive your HD video via WhatsApp or Google Drive</li>
+                    <li>We provide support for any technical issues</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Get Started Today!</h2>
+            <p style="text-align: center; font-size: 1.2em; margin-bottom: 30px;">
+                Fill out the form below and we'll contact you on WhatsApp
+            </p>
+            
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+
+                <div class="form-group">
+                    <label for="videoType">Type of Video Needed *</label>
+                    <select id="videoType" name="videoType" required>
+                        <option value="">Select video type...</option>
+                        <option value="Motion Graphics">Motion Graphics</option>
+                        <option value="Advert Video">Advert Video</option>
+                        <option value="Whiteboard Animation">Whiteboard Animation</option>
+                        <option value="Kids Nursery Rhyme">Kids Nursery Rhyme</option>
+                        <option value="Normal Clip Merge/Editing">Normal Clip Merge/Editing</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Additional Details (Optional)</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Tell us more about your project..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">💬 Send Message on WhatsApp</button>
+            </form>
+        </div>
+
+        <div class="contact-info">
+            <h3>📞 Contact Information</h3>
+            <p>📱 <a href="https://wa.me/2347042551379" target="_blank" style="color: white; text-decoration: underline;">WhatsApp: +234 704 255 1379</a></p>
+            <p>📧 <a href="mailto:nwaomavisuals@gmail.com" style="color: white; text-decoration: underline;">Email: nwaomavisuals@gmail.com</a></p>
+            <div class="social-links">
+                <a href="https://www.tiktok.com/@nwaomavisuals" target="_blank">📱 TikTok: @nwaomavisuals</a>
+                <br><br>
+                <a href="https://www.youtube.com/@nwaomavisuals" target="_blank">📺 YouTube: @nwaomavisuals</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 Nwaoma Visuals - Professional Video Editing Services</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const videoType = document.getElementById('videoType').value;
+            const message = document.getElementById('message').value;
+            
+            const whatsappMessage = `Hello Nwaoma Visuals! 👋
+
+*New Client Inquiry*
+
+📝 *Name:* ${name}
+📱 *Phone:* ${phone}
+📧 *Email:* ${email}
+🎬 *Video Type:* ${videoType}
+${message ? `\n💬 *Additional Details:*\n${message}` : ''}
+
+I'm interested in your video editing services. Please get back to me!`;
+            
+            const whatsappURL = `https://wa.me/2347042551379?text=${encodeURIComponent(whatsappMessage)}`;
+            
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
+</body>
+</html>
